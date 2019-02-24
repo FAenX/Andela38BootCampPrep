@@ -8,7 +8,7 @@
 ### then 
 
 ```python manage.py migrate```
-```python manage.py create superuser```
+```python manage.py createsuperuser```
 ```python manage.py runserver```
 
 ### to run the flask app
