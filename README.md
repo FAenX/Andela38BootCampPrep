@@ -2,19 +2,19 @@
 
 ### to run the django app
 
-```cd AndelaDjango```
-```pip install -r requirements.txt```
+```cd AndelaDjango
+pip install -r requirements.txt```
 
 ### then 
 
-```python manage.py migrate```
-```python manage.py create superuser```
-```python manage.py runserver```
+```python manage.py migrate
+python manage.py create superuser
+python manage.py runserver```
 
 ### to run the flask app
 
- ```cd AndelaFlask```
-```pip install -r requirements.txt```
+ ```cd AndelaFlask
+pip install -r requirements.txt```
 
 ### then
 
