@@ -114,7 +114,7 @@ REST_FRAMEWORK = {
 }
 
 # login redirects
-LOGIN_REDIRECT_URL = '/andelans/api/andelans/'
+LOGIN_REDIRECT_URL = '/api/andelans/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
