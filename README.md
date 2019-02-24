@@ -6,8 +6,8 @@
 
 ### then 
 
-```python manage.py migrate
-```python manage.py create superuser
+```python manage.py migrate```
+```python manage.py create superuser```
 ```python manage.py runserver```
 
 
