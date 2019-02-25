@@ -1,6 +1,7 @@
 .vscode/
 __pychache__/
 *.pyc
+*.env
 db.sqlite3
 migrations/
-
+*.db
