@@ -1,9 +1,21 @@
-import os
+from flask import Flask
+from config import DevelopmentConfig
 
-from app import create_app
 
-config_name = os.getenv('APP_SETTINGS') # config_name = "development"
-app = create_app(config_name)
+def create_app():
 
-if __name__ == '__main__':
+    app = Flask(__name__)
+    app.config.from_object(DevelopmentConfig)
+
+    from app import api_bp
+    app.register_blueprint(api_bp, url_prefix='/api')
+
+    from models import db
+    db.init_app(app)
+
+    return app
+
+
+if __name__ == "__main__":
+    app = create_app()
     app.run()
