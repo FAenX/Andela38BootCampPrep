@@ -6,7 +6,6 @@ from flask_sqlalchemy import SQLAlchemy
 # from passlib.apps import custom_app_context as pwd_context
 
 
-
 ma = Marshmallow()
 db = SQLAlchemy()
 
@@ -22,12 +21,12 @@ class User(db.Model):
     # def hash_password(self, password):
     #    self.password_hash = pwd_context.encrypt(password)
 
-    #def verify_password(self, password):
+    # def verify_password(self, password):
     #    return pwd_context.verify(password, self.password_hash)
 
 
 class UserSchema(ma.Schema):
-    id = fields.Integer(dump_only=True)
+    id = fields.Integer()
     username = fields.String(required=True)
     password_hash = fields.String(required=True)
     creation_date = fields.DateTime()
@@ -42,13 +41,17 @@ class Andelan(db.Model):
         db.TIMESTAMP, server_default=db.func.current_timestamp(), nullable=False)
     language = db.Column(db.String(250), nullable=False)
 
-    def __init__(self, first_name, language):
+    def __init__(self, first_name, last_name, language):
         self.first_name = first_name
+        self.last_name = last_name
         self.language = language
+
+    def __repr__(self):
+        return f'{self.first_name} {self.last_name} writes {self.language}'
 
 
 class AndelanSchema(ma.Schema):
-    id = fields.Integer(dump_only=True)
+    id = fields.Integer()
     language = fields.String(required=True)
     first_name = fields.String(required=True)
     last_name = fields.String(required=True)
